@@ -6,7 +6,7 @@ import {
 
 const router = express.Router();
 
-router.post("/palestrantes", registerPalestrante);
+router.post("/registerPalestrantes", registerPalestrante);
 router.get("/getPalestrantes", getPalestrantes);
 
 export default router;
