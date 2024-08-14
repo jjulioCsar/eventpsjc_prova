@@ -1,3 +1,6 @@
+import conn from "../config/conn.js";
+import { v4 as uuidv4 } from "uuid";
+
 export const registerParticipantes = (req, res) => {
     const { nome, email } = req.body;
   
@@ -12,7 +15,7 @@ export const registerParticipantes = (req, res) => {
     const sql =
       "INSERT INTO palestrantes ( nome, email) VALUES ( ?, ?)";
   
-    conn.query(sql, [id, nome, expertise], (err, data) => {
+    conn.query(sql, [id, nome, email], (err, data) => {
       if (err) {
         console.error(err);
         return res.status(500).json({ msg: "Erro ao criar o participante." });
@@ -20,3 +23,5 @@ export const registerParticipantes = (req, res) => {
       res.status(201).json({ msg: "Participante criado com sucesso!", id });
     });
   };
+
+  //me perdoe o eventos me lascou todinho, eu tenteii
