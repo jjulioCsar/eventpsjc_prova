@@ -6,6 +6,7 @@ const tableEventos = /*sql*/ `
         titulo VARCHAR(255) NOT NULL,
         data DATE NOT NULL,
         palestrante_id VARCHAR(60),
+        participante_id VARCHAR(60),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         
